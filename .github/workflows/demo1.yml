@@ -16,3 +16,7 @@ jobs:
         run: npm run build
       - name: Deploy project
         run: echo "Deploying..."
+  workflowB-calls-workflowC:
+    uses: vinodhrapolu/test1/.github/workflows/reuse_workflow.yml@main
+    secrets:
+      UNIT_TEST_CASE: ${{ secrets.UNIT_TEST_CASE }} # pass just this secret
